@@ -6,14 +6,12 @@ class ProjectsController < ApplicationController
   expose(:projects) { current_user.projects }
 
   def index
-    binding.pry
   end
 
   def new
   end
 
   def create
-    binding.pry
     if project.save
       redirect_to projects_path, notice: "Project created!"
     else
