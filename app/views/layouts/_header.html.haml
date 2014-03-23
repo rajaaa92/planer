@@ -6,6 +6,7 @@
       %ul.nav.navbar-nav
         - if signed_in?
           %li{ class: menu_class('projects') }= link_to "Projects", projects_path
+          %li{ class: menu_class('missions') }= link_to "Missions", missions_path
       %ul.nav.navbar-nav.pull-right
         - if signed_in?
           %li{ class: menu_class('registrations') }= link_to "Settings", edit_user_registration_path
