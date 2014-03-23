@@ -3,7 +3,7 @@ class ProjectsController < ApplicationController
   before_filter :authenticate_user!
 
   expose(:project, attributes: :rate_params)
-  expose(:projects)
+  expose(:projects) { current_user.projects }
 
   def index
   end

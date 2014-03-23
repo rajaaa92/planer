@@ -1,7 +1,7 @@
 .panel-group#accordion
   .panel.panel-default
     .panel-heading
-      = simple_form_for(project, url: projects_path(project), html: {method: :post, class: 'form-inline' }) do |f|
+      = simple_form_for(project, html: {method: :post, class: 'form-inline' }) do |f|
         = f.input_field :name, label: false, class: "form-control"
         = f.button :submit, "+", class: "btn btn-sm"
 
@@ -15,28 +15,4 @@
             = link_to 'E', edit_project_path(project.id), class: "btn btn-xs pull-right"
       .panel-collapse.collapse{id: "#{project.id}"}
         .panel-body
-
-
-
-
-          .panel-group#accordion
-            .panel.panel-default
-              .panel-heading
-                = simple_form_for(project.subprojects.build(user: current_user), html: {method: :post, class: 'form-inline' }) do |f|
-                  = f.input_field :name, label: false, class: "form-control"
-                  .hidden
-                    = f.association :parent, select: project
-                    = f.association :user, select: current_user
-                  = f.button :submit, "+", class: "btn btn-sm"
-
-            - project.subprojects.persisted.each do |subproject|
-              .panel.panel-default
-                .panel-heading
-                  %h4.panel-title
-                    %a{data: {toggle:"collapse", parent: "#accordion"}, href: "##{subproject.id}"}
-                      = subproject.name
-                      = link_to 'X', subproject, class: "btn btn-xs pull-right", method: :delete, data: { confirm: 'Are you sure?' }
-                      = link_to 'E', edit_project_path(subproject), class: "btn btn-xs pull-right"
-                .panel-collapse.collapse{id: "#{project.id}"}
-                  .panel-body
-                    subprojecty
+          = render "subprojects", project: project

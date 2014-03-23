@@ -18,8 +18,4 @@ class Project
     name
   end
 
-  def root?
-    parent_id == nil
-  end
-
 end
