@@ -11,6 +11,9 @@ class ProjectsController < ApplicationController
   def new
   end
 
+  def edit
+  end
+
   def create
     if project.save
       redirect_to projects_path, notice: "Project created!"

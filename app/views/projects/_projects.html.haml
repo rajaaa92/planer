@@ -1,10 +1,12 @@
-%table
+.panel-group#accordion
   - projects.each do |project|
-    %tr
-      %td= project.name
-      - if signed_in?
-        %td= link_to 'Destroy', project, :method => :delete, :data => { :confirm => 'Are you sure?' }
-
-%br
-
-= link_to 'New Project', new_project_path(user: current_user) if signed_in?
+    .panel.panel-default
+      .panel-heading
+        %h4.panel-title
+          %a{data: {toggle:"collapse", parent: "#accordion"}, href: "##{project.id}"}
+            = project.name
+            = link_to 'X', project, class: "btn btn-xs pull-right", method: :delete, data: { confirm: 'Are you sure?' }
+            = link_to 'E', edit_project_path(project.id), class: "btn btn-xs pull-right"
+      .panel-collapse.collapse{id: "#{project.id}"}
+        .panel-body
+          subprojekty
