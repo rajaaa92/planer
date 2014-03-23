@@ -2,7 +2,7 @@ class ProjectsController < ApplicationController
 
   before_filter :authenticate_user!
 
-  expose(:project, attributes: :rate_params)
+  expose(:project, attributes: :project_params)
   expose(:projects) { current_user.projects }
 
   def index
@@ -40,7 +40,7 @@ class ProjectsController < ApplicationController
 
   private
 
-  def rate_params
+  def project_params
     params.require(:project).permit(:name, :user_id, :parent_id)
   end
 end
