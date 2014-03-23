@@ -27,6 +27,19 @@ body {
   width: 20px;
 }
 
+.form-inputs input.btn {
+  margin: 5px;
+  width: auto;
+}
+
 .alert {
   background-color: rgba(255, 0, 0, 0.3);
+}
+
+.alert-success {
+  background-color: rgba(0, 255, 0, 0.3);
+}
+
+span.help-inline {
+  color: red;
 }

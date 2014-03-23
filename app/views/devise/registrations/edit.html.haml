@@ -1,4 +1,4 @@
-= simple_form_for(resource, as: resource_name, url: registration_path(resource_name), html: { method: :put }) do |f|
+= simple_form_for(resource, as: resource_name, url: registration_path(resource_name), html: { class: 'form-horizontal', method: :put }) do |f|
   = f.error_notification
 
   .form-inputs
@@ -14,7 +14,10 @@
 
     = f.input :current_password, hint: "we need your current password to confirm your changes", required: true
 
-  %hr
+    %hr
 
     = f.button :submit, "Save", class: "btn btn-default"
-  = link_to "Cancel my account", registration_path(resource_name), class: "btn btn-danger pull-right", data: { confirm: "Are you sure?" }, method: :delete
+
+  %hr
+
+  = link_to "Cancel my account", registration_path(resource_name), class: "btn btn-danger", data: { confirm: "Are you sure?" }, method: :delete
