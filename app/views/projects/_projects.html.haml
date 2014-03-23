@@ -1,5 +1,11 @@
 .panel-group#accordion
-  - projects.each do |project|
+  .panel.panel-default
+    .panel-heading
+      = simple_form_for(project, url: projects_path(project), html: {method: :post, class: 'form-inline' }) do |f|
+        = f.input_field :name, label: false, class: "form-control"
+        = f.button :submit, "+", class: "btn btn-sm"
+
+  - projects.persisted.each do |project|
     .panel.panel-default
       .panel-heading
         %h4.panel-title
