@@ -2,3 +2,15 @@ en:
   time:
     formats:
       default: "%Y-%m-%d %H:%M"
+
+  welcome:
+    index:
+      landing_1: "Organize your ideas, wise thoughts and problems."
+      landing_2: "Have an idea? -> note it."
+      landing_3: "Have a problem? -> note it."
+      landing_4: "Got a wise thought? -> note it."
+      landing_5: "And when you have some free time, look at them and make a project from them."
+      landing_6: "Split it into subprojects, and the subproject into subsubprojects, etc."
+      landing_7: "Make your life easier."
+  sign_up: "Sign up"
+  sign_in: "Sign in"

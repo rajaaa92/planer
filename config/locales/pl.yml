@@ -1,0 +1,12 @@
+pl:
+  welcome:
+    index:
+      landing_1: "Ogarnij swoje pomysły, mądre myśli i problemy."
+      landing_2: "Masz pomysł? -> notujesz."
+      landing_3: "Masz problem? -> notujesz."
+      landing_4: "Przeczytałeś jakąś mądrą myśl? -> notujesz."
+      landing_5: "A jak masz czas, to przeglądasz myśli, problemy i pomysły i robisz z nich projekt."
+      landing_6: "Projekt rozdrabniasz na mniejsze punkty, a te punkty w podpunkty, itd."
+      landing_7: "Ułatw sobie życie."
+  sign_up: "Załóż konto"
+  sign_in: "Zaloguj się"

@@ -1,1 +1,20 @@
-siemka!
+%center
+  .h2= t('.landing_1')
+  .h3= t('.landing_2')
+  .h3= t('.landing_3')
+  .h3= t('.landing_4')
+  .h3= t('.landing_6')
+  .h2= t('.landing_7')
+
+- unless signed_in?
+
+  %hr
+
+  %center
+    = link_to t('sign_in'), new_user_session_path, class: "btn btn-default btn-lg"
+    = link_to t('sign_up'), new_user_registration_path, class: "btn btn-primary btn-lg"
+
+= link_to root_url(locale: "en") do
+  = image_tag("EN.jpg")
+= link_to root_url(locale: "pl") do
+  = image_tag("PL.png")
