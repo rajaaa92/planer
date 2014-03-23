@@ -12,3 +12,4 @@
           = problem.name
           = link_to 'X', problem, class: "btn btn-xs pull-right", method: :delete, data: { confirm: 'Are you sure?' }
           = link_to 'E', edit_problem_path(problem.id), class: "btn btn-xs pull-right"
+          = link_to "P", projects_path(project: {name: problem.name, user: problem.user}), method: :post, class: "btn btn-xs pull-right"

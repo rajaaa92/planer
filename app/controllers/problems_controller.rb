@@ -4,6 +4,7 @@ class ProblemsController < ApplicationController
 
   expose(:problem, attributes: :problem_params)
   expose(:problems) { current_user.problems }
+  expose(:project)
 
   def index
   end

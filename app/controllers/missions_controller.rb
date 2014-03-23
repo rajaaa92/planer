@@ -4,6 +4,7 @@ class MissionsController < ApplicationController
 
   expose(:mission, attributes: :mission_params)
   expose(:missions) { current_user.missions }
+  expose(:project)
 
   def index
   end
