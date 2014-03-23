@@ -9,9 +9,8 @@
 
     = render 'layouts/header'
 
-    %p.notice
-      = notice
-    %p.alert
-      = alert
+    .container.body
 
-    = yield
+      = render 'layouts/flash', flash: flash || []
+
+      = yield

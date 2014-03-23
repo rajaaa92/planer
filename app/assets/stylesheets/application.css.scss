@@ -3,3 +3,30 @@
 body {
   background:#8070A1;
 }
+
+.container.body {
+  background: rgba(255, 255, 255, 0.6);
+  -webkit-box-shadow: 0 4px 9px rgba(5, 5, 5, 0.56);
+  -moz-box-shadow: 0 4px 9px rgba(5, 5, 5, 0.56);
+  -o-box-shadow: 0 4px 9px rgba(5, 5, 5, 0.56);
+  box-shadow: 0 4px 9px rgba(5, 5, 5, 0.56);
+  -webkit-border-radius: 6px;
+  -moz-border-radius: 6px;
+  -o-border-radius: 6px;
+  border-radius: 6px;
+  padding: 20px;
+}
+
+.form-inputs input {
+  margin: 5px;
+  width: 200px;
+}
+
+.form-inputs input.boolean {
+  margin: 5px;
+  width: 20px;
+}
+
+.alert {
+  background-color: rgba(255, 0, 0, 0.3);
+}
