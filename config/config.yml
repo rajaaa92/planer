@@ -1,0 +1,15 @@
+defaults: &defaults
+  tld_length: 1
+
+development:
+  <<: *defaults
+  domain: planer.dev
+
+test:
+  <<: *defaults
+  domain: hrguru.test
+
+production:
+  <<: *defaults
+  tld_length: 2
+  domain: planer.rajewska.asia

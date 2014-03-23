@@ -1,0 +1,10 @@
+%table
+  - projects.each do |project|
+    %tr
+      %td= project.name
+      - if signed_in?
+        %td= link_to 'Destroy', project, :method => :delete, :data => { :confirm => 'Are you sure?' }
+
+%br
+
+= link_to 'New Project', new_project_path(user: current_user) if signed_in?
