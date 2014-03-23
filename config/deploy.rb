@@ -1,5 +1,4 @@
 require "bundler/capistrano"
-require "whenever/capistrano"
 
 server "rajewska.asia", :web, :app, :db, primary: true
 
@@ -54,11 +53,4 @@ namespace :deploy do
     end
   end
   before "deploy", "deploy:check_revision"
-end
-
-namespace :whenever do
-  task :update_crontab do
-    run "cd #{current_path} && bundle exec whenever --update-crontab #{application} --set environment=production"
-  end
-  after "deploy:create_symlink", "whenever:update_crontab"
 end
