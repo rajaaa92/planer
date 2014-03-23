@@ -11,6 +11,7 @@ class User
   has_many :projects
   has_many :missions
   has_many :ideas
+  has_many :problems
 
   def name
     email.split('@').first

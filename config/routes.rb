@@ -3,6 +3,7 @@ Planer::Application.routes.draw do
   resources :projects, except: [:show]
   resources :missions, except: [:show]
   resources :ideas, except: [:show]
+  resources :problems, except: [:show]
   resources :users, except: [:edit]
 
   authenticated :user do

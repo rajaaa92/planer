@@ -1,0 +1,14 @@
+.panel-group#accordion
+  .panel.panel-default
+    .panel-heading
+      = simple_form_for(problem, html: {method: :post, class: 'form-inline' }) do |f|
+        = f.input_field :name, label: false, class: "form-control"
+        = f.button :submit, "+", class: "btn btn-sm"
+
+  - problems.persisted.each do |problem|
+    .panel.panel-default
+      .panel-heading
+        %h4.panel-title
+          = problem.name
+          = link_to 'X', problem, class: "btn btn-xs pull-right", method: :delete, data: { confirm: 'Are you sure?' }
+          = link_to 'E', edit_problem_path(problem.id), class: "btn btn-xs pull-right"
