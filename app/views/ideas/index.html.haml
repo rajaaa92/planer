@@ -12,3 +12,4 @@
           = idea.name
           = link_to 'X', idea, class: "btn btn-xs pull-right", method: :delete, data: { confirm: 'Are you sure?' }
           = link_to 'E', edit_idea_path(idea.id), class: "btn btn-xs pull-right"
+          = link_to "P", projects_path(project: {name: idea.name, user: idea.user}), method: :post, class: "btn btn-xs pull-right"

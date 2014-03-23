@@ -4,6 +4,7 @@ class IdeasController < ApplicationController
 
   expose(:idea, attributes: :idea_params)
   expose(:ideas) { current_user.ideas }
+  expose(:project)
 
   def index
   end
