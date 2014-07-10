@@ -25,9 +25,10 @@ namespace :deploy do
 
   task :setup_config, roles: :app do
     sudo "ln -nfs #{current_path}/config/nginx.conf /opt/nginx/conf/sites-available/#{application}.conf"
-    # sudo "ln -s /opt/nginx/conf/sites-available/#{application}.conf /opt/nginx/conf/sites-enabled/#{application}.conf"
+    sudo "ln -nfs /opt/nginx/conf/sites-available/#{application}.conf /opt/nginx/conf/sites-enabled/#{application}.conf"
     sudo "/opt/nginx/sbin/nginx -s reload"
     sudo "service nginx reload"
+    sudo "service nginx restart"
     run "mkdir -p #{shared_path}/config"
     puts "Now edit the config files in #{shared_path}."
   end
