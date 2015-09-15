@@ -33,10 +33,12 @@ class ProjectsController < ApplicationController
   end
 
   def destroy
-    if project.destroy
-      redirect_to projects_path, notice: "Project deleted!"
-    else
-      flash[:alert] = "Something were wrong. Delete unsuccessful"
+    respond_to do |format|
+      format.html do
+        project.destroy
+        redirect_to projects_path, notice: "Project deleted!"
+      end
+      format.js { project.destroy }
     end
   end
 
