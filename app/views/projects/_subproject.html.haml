@@ -1,7 +1,7 @@
-.panel.panel-default
+.panel.panel-default{id: "project_panel_#{subproject.id}"}
   .panel-heading
     %h4.panel-title
-      %a{data: {toggle:"collapse", parent: "#accordion#{subproject.parent.id}"}, href: "##{subproject.id}"}
+      %a{data: {toggle:"collapse", parent: "#subprojects_accordion_#{subproject.parent.id}"}, href: "##{subproject.id}"}
         = subproject.name
         = link_to 'X', subproject, class: "btn btn-xs pull-right", method: :delete, data: { confirm: 'Are you sure?' }
         = link_to 'E', edit_project_path(subproject.id), class: "btn btn-xs pull-right"

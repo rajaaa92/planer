@@ -1,7 +1,7 @@
-.panel-group{id: "accordion#{project.id}"}
+.panel-group{id: "subprojects_accordion_#{project.id}"}
   .panel.panel-default
     .panel-heading
-      = simple_form_for(project.subprojects.build(user: current_user), html: {method: :post, class: 'form-inline' }) do |f|
+      = simple_form_for(project.subprojects.build(user: current_user), html: {method: :post, class: 'form-inline', id: "subprojects_form_#{project.id}" }, remote: true) do |f|
         = f.input_field :name, label: false, class: "form-control"
         .hidden
           = f.association :parent, select: project

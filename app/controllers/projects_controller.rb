@@ -15,10 +15,12 @@ class ProjectsController < ApplicationController
   end
 
   def create
-    if project.save
-      redirect_to projects_path, notice: "Project created!"
-    else
-      render :new, alert: "Something were wrong. Create unsuccessful"
+    respond_to do |format|
+      format.html do
+        project.save
+        redirect_to projects_path, notice: "Project created!"
+      end
+      format.js { project.save }
     end
   end
 

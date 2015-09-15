@@ -1,0 +1,8 @@
+<% if project.root? %>
+  $('.panel-group#main_accordion').append("<%= escape_javascript(render partial: 'project', :locals => { project: project}) %>");
+  $('form#main_form input#project_name').val('')
+<% else %>
+  var id = "<%= project.parent.id %>"
+  $(".panel-group#subprojects_accordion_" + id).append("<%= escape_javascript(render partial: 'subproject', :locals => { subproject: project}) %>");
+  $('form#subprojects_form_' + id + ' input#project_name').val('')
+<% end %>
