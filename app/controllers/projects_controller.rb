@@ -1,4 +1,5 @@
 class ProjectsController < ApplicationController
+  respond_to :html, :json
 
   before_filter :authenticate_user!
 
@@ -16,28 +17,21 @@ class ProjectsController < ApplicationController
 
   def create
     respond_to do |format|
-      format.html do
-        project.save
-        redirect_to projects_path, notice: "Project created!"
-      end
       format.js { project.save }
     end
   end
 
   def update
-    if project.save
-      redirect_to projects_path, notice: "Project updated!"
-    else
-      render :edit, alert: "Something were wrong. Update unsuccessful"
+    respond_to do |format|
+      format.json do
+        project.save
+        respond_with project
+      end
     end
   end
 
   def destroy
     respond_to do |format|
-      format.html do
-        project.destroy
-        redirect_to projects_path, notice: "Project deleted!"
-      end
       format.js { project.destroy }
     end
   end
