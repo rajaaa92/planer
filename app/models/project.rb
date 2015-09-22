@@ -3,6 +3,7 @@ class Project
   include Mongoid::Timestamps
 
   field :name, type: String
+  field :position, type: Integer
 
   belongs_to :user
   belongs_to :parent, class_name: "Project"

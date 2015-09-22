@@ -4,7 +4,7 @@ class ProjectsController < ApplicationController
   before_filter :authenticate_user!
 
   expose(:project, attributes: :project_params)
-  expose(:projects) { current_user.projects }
+  expose(:projects) { current_user.projects.order(position: :asc) }
 
   def index
   end
@@ -34,6 +34,13 @@ class ProjectsController < ApplicationController
     respond_to do |format|
       format.js { project.destroy }
     end
+  end
+
+  def sort
+    params[:project_panel].each_with_index do |id, index|
+      Project.find(id).update_attribute(:position, index+1)
+    end
+    render nothing: true
   end
 
   private

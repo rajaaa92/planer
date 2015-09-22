@@ -1,5 +1,5 @@
-.panel-group#main_accordion
-  .panel.panel-default#main_form_panel
+.panel-group#main_projects_list{data: {'update-url' => sort_projects_url}}
+  .panel.panel-default#new_project_panel
     .panel-heading
       = simple_form_for(project, html: {method: :post, class: 'form-inline', id: 'main_form' }, remote: true) do |f|
         = f.input_field :name, label: false, class: "form-control"

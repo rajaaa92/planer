@@ -1,6 +1,8 @@
 Planer::Application.routes.draw do
   devise_for :users
-  resources :projects, except: [:show]
+  resources :projects, except: [:show] do
+    collection { post :sort }
+  end
   resources :missions, except: [:show]
   resources :ideas, except: [:show]
   resources :problems, except: [:show]
