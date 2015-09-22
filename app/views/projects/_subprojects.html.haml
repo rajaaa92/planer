@@ -1,4 +1,4 @@
-.panel-group{id: "subprojects_accordion_#{project.id}"}
+.panel-group.subprojects_list{id: "subprojects_accordion_#{project.id}", data: {'update-url' => sort_projects_url}}
   .panel.panel-default
     .panel-heading
       = simple_form_for(project.subprojects.build(user: current_user), html: {method: :post, class: 'form-inline', id: "subprojects_form_#{project.id}" }, remote: true) do |f|

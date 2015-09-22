@@ -4,7 +4,7 @@ class ProjectsController < ApplicationController
   before_filter :authenticate_user!
 
   expose(:project, attributes: :project_params)
-  expose(:projects) { current_user.projects.order(position: :asc) }
+  expose(:projects) { current_user.projects }
 
   def index
   end

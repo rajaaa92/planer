@@ -12,6 +12,8 @@ class Project
   validates_presence_of :name
   validates_presence_of :user_id
 
+  default_scope -> { order(position: :asc) }
+
   scope :persisted, -> { ne(name: nil) }
   scope :roots, -> { where(parent_id: nil) }
 
