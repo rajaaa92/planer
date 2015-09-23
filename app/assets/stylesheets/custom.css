@@ -43,3 +43,11 @@ input.string.required.form-control.inline-input {
 h4.panel-title {
   text-transform: none;
 }
+
+.best_in_place input {
+  width: 90%;
+  line-height: 1;
+  max-height: 10px;
+  font-size: inherit;
+}
+
