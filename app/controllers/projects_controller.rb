@@ -18,6 +18,13 @@ class ProjectsController < ApplicationController
   def create
     respond_to do |format|
       format.js { project.save }
+      format.html do
+        if project.save
+          redirect_to projects_path, notice: "Project created!"
+        else
+          redirect_to projects_path, alert: "Something were wrong. Create unsuccessful"
+        end
+      end
     end
   end
 
