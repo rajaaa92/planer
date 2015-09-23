@@ -1,4 +1,5 @@
 class IdeasController < ApplicationController
+  respond_to :html, :json
 
   before_filter :authenticate_user!
 
@@ -9,33 +10,26 @@ class IdeasController < ApplicationController
   def index
   end
 
-  def new
-  end
-
-  def edit
-  end
-
   def create
-    if idea.save
-      redirect_to ideas_path, notice: "Idea created!"
-    else
-      render :new, alert: "Something were wrong. Create unsuccessful"
+    respond_to do |format|
+      format.js { idea.save }
     end
   end
 
   def update
-    if idea.save
-      redirect_to ideas_path, notice: "Idea updated!"
-    else
-      render :edit, alert: "Something were wrong. Update unsuccessful"
+    respond_to do |format|
+      format.json do
+        idea.save
+        respond_with idea
+      end
     end
   end
 
   def destroy
-    if idea.destroy
-      redirect_to ideas_path, notice: "Idea deleted!"
-    else
-      flash[:alert] = "Something were wrong. Delete unsuccessful"
+    respond_to do |format|
+      format.js do
+        idea.destroy
+      end
     end
   end
 

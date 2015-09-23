@@ -5,15 +5,9 @@
         .panel-group#accordion
           .panel.panel-default
             .panel-heading
-              = simple_form_for(idea, html: {method: :post, class: 'form-inline' }) do |f|
+              = simple_form_for(idea, html: {method: :post, class: 'form-inline' }, remote: true) do |f|
                 = f.input_field :name, label: false, class: "form-control inline-input"
                 = f.submit "+", class: "btn-xs inline-plus special"
 
           - ideas.persisted.each do |idea|
-            .panel.panel-default
-              .panel-heading
-                %h4.panel-title
-                  = idea.name
-                  = link_to 'X', idea, class: "btn btn-xs pull-right", method: :delete, data: { confirm: 'Are you sure?' }
-                  = link_to 'E', edit_idea_path(idea.id), class: "btn btn-xs pull-right"
-                  = link_to "P", projects_path(project: {name: idea.name, user: idea.user}), method: :post, class: "btn btn-xs pull-right"
+            = render 'idea', idea: idea
