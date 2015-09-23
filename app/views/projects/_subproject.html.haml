@@ -4,7 +4,6 @@
       %a{data: {toggle:"collapse", parent: "#subprojects_accordion_#{subproject.parent.id}"}, href: "##{subproject.id}"}
         = best_in_place subproject, :name, { :classes => "best_in_place" }
         = link_to 'X', subproject, class: "btn btn-xs pull-right", method: :delete, remote: true, data: { confirm: 'Are you sure?' }
-        = link_to 'E', edit_project_path(subproject.id), class: "btn btn-xs pull-right"
   .panel-collapse.collapse{id: "#{subproject.id}"}
     .panel-body
       = render "subprojects", project: subproject
