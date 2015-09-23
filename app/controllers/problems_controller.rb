@@ -1,4 +1,5 @@
 class ProblemsController < ApplicationController
+  respond_to :html, :json
 
   before_filter :authenticate_user!
 
@@ -24,10 +25,11 @@ class ProblemsController < ApplicationController
   end
 
   def update
-    if problem.save
-      redirect_to problems_path, notice: "problem updated!"
-    else
-      render :edit, alert: "Something were wrong. Update unsuccessful"
+    respond_to do |format|
+      format.json do
+        problem.save
+        respond_with problem
+      end
     end
   end
 
