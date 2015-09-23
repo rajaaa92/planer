@@ -63,3 +63,9 @@ textarea {
   box-shadow: none;
 }
 
+.button.danger {
+  background: red;
+  border-color: red;
+  color: #fff !important;
+}
+
