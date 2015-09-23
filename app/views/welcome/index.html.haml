@@ -75,7 +75,7 @@
         %footer
           %ul.buttons
             %li
-              %a.button{:href => "#sign_up"} Organize your life
+              %a.button.scrolly{:href => "#sign_up"} Organize your life
       .4u{:class => "12u(narrower) important(narrower)"}
         %ul.featured-icons
           %li
@@ -120,21 +120,24 @@
         Start your life
         %strong under control
     .row
-      %form.sign_up
+      = simple_form_for(resource, as: resource_name, url: registration_path(resource_name), html: {class: 'sign_up'}) do |f|
         .row
           .12u
-            %input{:name => "email", :placeholder => "Email", :type => "email"}
+            = f.error_notification
         .row
           .12u
-            %input{:name => "password", :placeholder => "Password", :type => "password"}
+            = f.input :email, required: true, placeholder: 'Email', autofocus: true, label: false
         .row
           .12u
-            %input{:name => "password_confirmation", :placeholder => "Password confirmation", :type => "password"}
+            = f.input :password, required: true, placeholder: 'Password', label: false
+        .row
+          .12u
+            = f.input :password_confirmation, required: true, placeholder: 'Repeat password', label: false
         .row
           .12u
             %ul.buttons
               %li
-                %input.special{:type => "submit", :value => "Sign up"}
+                = f.submit "Sign up", class: "special"
 / CTA
 %section#cta
   %header
@@ -146,6 +149,6 @@
   %footer
     %ul.buttons
       %li
-        %a.button.special{:href => "#sign_up"} Yes, please
+        %a.button.special.scrolly{:href => "#sign_up"} Yes, please
       %li
-        %a.button{:href => "#"} No, thanks
+        %a.button.scrolly{:href => "#"} No, thanks

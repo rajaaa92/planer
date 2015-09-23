@@ -1,6 +1,6 @@
 Planer::Application.routes.draw do
 
-  devise_for :users
+  devise_for :users, controllers: { registrations: "devise_custom/registrations" }
 
   resources :projects, except: [:show] do
     collection { post :sort }

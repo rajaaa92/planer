@@ -3,5 +3,10 @@
     toastr.options.positionClass='toast-bottom-right'
   - flash.each do |f|
     - type = f[0].to_s.gsub('alert', 'error').gsub('notice', 'info')
-    = javascript_tag do
-      toastr["#{type}"]("#{f[1]}")
+    - if f[1].kind_of?(Array)
+      - f[1].each do |message|
+        = javascript_tag do
+          toastr["#{type}"]("#{message}")
+    - else
+      = javascript_tag do
+        toastr["#{type}"]("#{f[1]}")
