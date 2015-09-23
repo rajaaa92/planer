@@ -4,8 +4,24 @@ a:hover, a:visited {
   text-decoration: none;
 }
 
-form.sign_up {
+form.sign_up, form.sign_in, form.password_form {
   width: 100%;
+}
+
+form.sign_in label.checkbox {
+  display: flex;
+}
+
+form.sign_in label.checkbox input {
+  margin-right: 5px;
+}
+
+body.welcome #main {
+  padding: 2.5em 0 0 0;
+}
+
+body.passwords #main {
+  padding-bottom: 0;
 }
 
 /*body {

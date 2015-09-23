@@ -19,6 +19,8 @@
         %li.current
           = link_to 'Welcome', root_path
         %li
-          = link_to t('sign_in'), new_user_session_path
+          = link_to t('sign_in'), "#", :class => "sign_in_button"
         %li
           = link_to t('sign_up'), '#sign_up', class: "button special"
+
+= render 'layouts/sign_in_modal'

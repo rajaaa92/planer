@@ -1,10 +1,17 @@
-%h2 Forgot your password?
-
-= simple_form_for(resource, :as => resource_name, :url => password_path(resource_name), :html => { :method => :post }) do |f|
-  = f.error_notification
-
-  .form-inputs
-    = f.input :email, :required => true, :autofocus => true
-
-  .form-actions
-    = f.button :submit, "Send me reset password instructions", class: "btn btn-default"
+%article#main
+  %section.wrapper.style3.container.special#sign_up{:class => "75%"}
+    %header.major
+      %h2 Forgot your password?
+    .row
+      = simple_form_for(resource, :as => resource_name, :url => password_path(resource_name), :html => { class: 'password_form', :method => :post }) do |f|
+        .row
+          .12u
+            = f.error_notification
+        .row
+          .12u
+            = f.input :email, required: true, placeholder: 'Email', autofocus: true, label: false
+        .row
+          .12u
+            %ul.buttons
+              %li
+                = f.submit "Send me reset password instructions", class: "special"
