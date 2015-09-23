@@ -1,9 +1,13 @@
-.panel-group#main_projects_list{data: {'update-url' => sort_projects_url}}
-  .panel.panel-default#new_project_panel
-    .panel-heading
-      = simple_form_for(project, html: {method: :post, class: 'form-inline', id: 'main_form' }, remote: true) do |f|
-        = f.input_field :name, label: false, class: "form-control"
-        = f.button :submit, "+", class: "btn btn-sm"
+%article#main
+  %section.wrapper.style4.container
+    .content
+      %section
+        .panel-group#main_projects_list{data: {'update-url' => sort_projects_url}}
+          .panel.panel-default#new_project_panel
+            .panel-heading
+              = simple_form_for(project, html: {method: :post, class: 'form-inline', id: 'main_form' }, remote: true) do |f|
+                = f.input_field :name, label: false, class: "form-control inline-input"
+                = f.submit "+", class: "btn-xs inline-plus special"
 
-  - projects.roots.persisted.each do |project|
-    = render "project", project: project
+          - projects.roots.persisted.each do |project|
+            = render "project", project: project

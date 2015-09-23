@@ -2,10 +2,10 @@
   .panel.panel-default
     .panel-heading
       = simple_form_for(project.subprojects.build(user: current_user), html: {method: :post, class: 'form-inline', id: "subprojects_form_#{project.id}" }, remote: true) do |f|
-        = f.input_field :name, label: false, class: "form-control"
+        = f.input_field :name, label: false, class: "form-control inline-input"
         .hidden
           = f.association :parent, select: project
-        = f.button :submit, "+", class: "btn btn-sm"
+        = f.submit "+", class: "btn-xs inline-plus special"
 
   - project.subprojects.persisted.each do |subproject|
     = render "subproject", subproject: subproject
