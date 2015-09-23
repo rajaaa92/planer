@@ -11,7 +11,7 @@ Planer::Application.routes.draw do
   resources :users, except: [:edit]
 
   authenticated :user do
-    root 'welcome#index', as: "dashboard"
+    root 'projects#index', as: "dashboard"
   end
 
   root 'welcome#index'
