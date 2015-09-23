@@ -4,3 +4,4 @@ $(document).ready ->
 
   $('.sign_in_button').click ->
     $('#myModal').modal('show')
+  $('header#header').addClass('alt').removeClass('header')
