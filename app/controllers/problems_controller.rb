@@ -10,12 +10,6 @@ class ProblemsController < ApplicationController
   def index
   end
 
-  def new
-  end
-
-  def edit
-  end
-
   def create
     if problem.save
       redirect_to problems_path, notice: "Problem created!"
