@@ -3,5 +3,6 @@ $(document).ready ->
     $('html, body').animate { scrollTop: 0 }, 600
 
   $('.sign_in_button').click ->
-    $('#myModal').modal('show')
+    $('#sign_in_modal').modal('show')
+
   $('header#header').addClass('alt').removeClass('header')
