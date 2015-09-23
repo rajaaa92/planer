@@ -2,16 +2,23 @@
 %html{ lang: "en" }
   %head
     %title Planer
+    %meta{:charset => "utf-8"}
+    %meta{:content => "width=device-width, initial-scale=1", :name => "viewport"}
+    /[if lte IE 8] <script src="assets/js/ie/html5shiv.js"></script>
+    /[if lte IE 8] <link rel="stylesheet" href="assets/css/ie8.css" />
+    /[if lte IE 9] <link rel="stylesheet" href="assets/css/ie9.css" />
     = stylesheet_link_tag    "application", media: "all", "data-turbolinks-track" => true
     = javascript_include_tag "application", "data-turbolinks-track" => true
-    = javascript_include_tag params[:controller]
+    = javascript_include_tag params[:controller] if javascript_exists?(params[:controller])
+    = custom_bootstrap_flash
     = csrf_meta_tags
-  %body
+  %body.index
+    #page-wrapper
 
     = render 'layouts/header'
 
-    .container.body
+    = render 'layouts/flash', flash: flash || []
 
-      = render 'layouts/flash', flash: flash || []
+    = yield
 
-      = yield
+    = render 'layouts/footer'

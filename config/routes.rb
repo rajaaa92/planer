@@ -1,5 +1,7 @@
 Planer::Application.routes.draw do
+
   devise_for :users
+
   resources :projects, except: [:show] do
     collection { post :sort }
   end
@@ -9,7 +11,7 @@ Planer::Application.routes.draw do
   resources :users, except: [:edit]
 
   authenticated :user do
-    root 'projects#index', as: "dashboard"
+    root 'welcome#index', as: "dashboard"
   end
 
   root 'welcome#index'

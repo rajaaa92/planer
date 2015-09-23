@@ -1,6 +1,7 @@
-#notification_panel
-.flash_messages
-  - flash.each do |name, msg|
-    .alert{:class => "#{name == :notice ? ' alert-success' : ' alert-error' }"}
-      %a.close{:'data-dismiss' => "alert"} ×
-      = msg
+- unless flash.empty?
+  = javascript_tag do
+    toastr.options.positionClass='toast-bottom-right'
+  - flash.each do |f|
+    - type = f[0].to_s.gsub('alert', 'error').gsub('notice', 'info')
+    = javascript_tag do
+      toastr["#{type}"]("#{f[1]}")

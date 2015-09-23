@@ -1,18 +1,24 @@
-.navbar.navbar-default.navbar-static-top{ role: "navigation" }
-  .container
-    .navbar-header
-      = link_to "Planer", root_path, class: "navbar-brand"
-    .navbar-collapse.collapse
-      %ul.nav.navbar-nav
-        - if signed_in?
-          %li{ class: menu_class('projects') }= link_to "Projects", projects_path
-          %li{ class: menu_class('missions') }= link_to "Missions", missions_path
-          %li{ class: menu_class('ideas') }= link_to "Ideas", ideas_path
-          %li{ class: menu_class('problems') }= link_to "Problems", problems_path
-      %ul.nav.navbar-nav.pull-right
-        - if signed_in?
-          %li{ class: menu_class('registrations') }= link_to "Settings", edit_user_registration_path
-          %li= link_to "Sign out", destroy_user_session_path, data: { method: 'delete' }
-        - else
-          %li= link_to t('sign_in'), new_user_session_path
-          %li= link_to t('sign_up'), new_user_registration_path
+%header#header.alt
+  %h1#logo
+    = link_to root_path do
+      Planer
+      %span by Joanna Rajewska
+  %nav#nav
+    %ul
+      - if signed_in?
+        %li{ class: menu_class('projects') }= link_to "Projects", projects_path
+        %li{ class: menu_class('missions') }= link_to "Missions", missions_path
+        %li{ class: menu_class('ideas') }= link_to "Ideas", ideas_path
+        %li{ class: menu_class('problems') }= link_to "Problems", problems_path
+        |
+        %li{ class: menu_class('registrations') }
+          = link_to "Settings", edit_user_registration_path
+        %li
+          = link_to "Sign out", destroy_user_session_path
+      - else
+        %li.current
+          = link_to 'Welcome', root_path
+        %li
+          = link_to t('sign_in'), new_user_session_path
+        %li
+          = link_to t('sign_up'), new_user_registration_path, class: "button special"

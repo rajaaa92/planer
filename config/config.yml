@@ -7,7 +7,7 @@ development:
 
 test:
   <<: *defaults
-  domain: hrguru.test
+  domain: planer.test
 
 production:
   <<: *defaults

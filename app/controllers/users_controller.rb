@@ -4,9 +4,6 @@ class UsersController < ApplicationController
 
   expose(:user, attributes: :user_params) { current_user }
 
-  def show
-  end
-
   private
 
   def user_params
