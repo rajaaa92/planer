@@ -5,15 +5,9 @@
         .panel-group#accordion
           .panel.panel-default
             .panel-heading
-              = simple_form_for(mission, html: {method: :post, class: 'form-inline' }) do |f|
+              = simple_form_for(mission, html: {method: :post, class: 'form-inline' }, remote: true) do |f|
                 = f.input_field :name, label: false, class: "form-control inline-input"
                 = f.submit "+", class: "btn-xs inline-plus special"
 
           - missions.persisted.each do |mission|
-            .panel.panel-default
-              .panel-heading
-                %h4.panel-title
-                  = mission.name
-                  = link_to 'X', mission, class: "btn btn-xs pull-right", method: :delete, data: { confirm: 'Are you sure?' }
-                  = link_to 'E', edit_mission_path(mission.id), class: "btn btn-xs pull-right"
-                  = link_to "P", projects_path(project: {name: mission.name, user: mission.user}), method: :post, class: "btn btn-xs pull-right"
+            = render 'mission', mission: mission

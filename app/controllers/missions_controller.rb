@@ -1,4 +1,5 @@
 class MissionsController < ApplicationController
+  respond_to :html, :json
 
   before_filter :authenticate_user!
 
@@ -9,33 +10,26 @@ class MissionsController < ApplicationController
   def index
   end
 
-  def new
-  end
-
-  def edit
-  end
-
   def create
-    if mission.save
-      redirect_to missions_path, notice: "Mission created!"
-    else
-      render :new, alert: "Something were wrong. Create unsuccessful"
+    respond_to do |format|
+      format.js { mission.save }
     end
   end
 
   def update
-    if mission.save
-      redirect_to missions_path, notice: "Mission updated!"
-    else
-      render :edit, alert: "Something were wrong. Update unsuccessful"
+    respond_to do |format|
+      format.json do
+        mission.save
+        respond_with mission
+      end
     end
   end
 
   def destroy
-    if mission.destroy
-      redirect_to missions_path, notice: "Mission deleted!"
-    else
-      flash[:alert] = "Something were wrong. Delete unsuccessful"
+    respond_to do |format|
+      format.js do
+        mission.destroy
+      end
     end
   end
 

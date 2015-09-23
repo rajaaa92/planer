@@ -1,0 +1,6 @@
+.panel.panel-default{id: "#{mission.id}"}
+  .panel-heading
+    %h4.panel-title
+      = best_in_place mission, :name, { :classes => "best_in_place" }
+      = link_to 'X', mission, class: "btn btn-xs pull-right", method: :delete, data: { confirm: 'Are you sure?' }, remote: true
+      = link_to "P", projects_path(project: {name: mission.name, user: mission.user}), method: :post, class: "btn btn-xs pull-right"
