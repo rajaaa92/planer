@@ -26,10 +26,10 @@ class ProblemsController < ApplicationController
   end
 
   def destroy
-    if problem.destroy
-      redirect_to problems_path, notice: "problem deleted!"
-    else
-      flash[:alert] = "Something were wrong. Delete unsuccessful"
+    respond_to do |format|
+      format.js do
+        problem.destroy
+      end
     end
   end
 
