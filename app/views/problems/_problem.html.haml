@@ -2,5 +2,5 @@
   .panel-heading
     %h4.panel-title
       = best_in_place problem, :name, { :classes => "best_in_place" }
-      = link_to 'X', problem, class: "btn btn-xs pull-right", method: :delete, data: { confirm: 'Are you sure?' }
+      = link_to 'X', problem, class: "btn btn-xs pull-right", method: :delete, data: { confirm: 'Are you sure?' }, remote: true
       = link_to "P", projects_path(project: {name: problem.name, user: problem.user}), method: :post, class: "btn btn-xs pull-right"
