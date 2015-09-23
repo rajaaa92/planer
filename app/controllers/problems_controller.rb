@@ -11,10 +11,8 @@ class ProblemsController < ApplicationController
   end
 
   def create
-    if problem.save
-      redirect_to problems_path, notice: "Problem created!"
-    else
-      render :new, alert: "Something were wrong. Create unsuccessful"
+    respond_to do |format|
+      format.js { problem.save }
     end
   end
 
