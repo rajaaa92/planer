@@ -23,4 +23,4 @@
         %li
           = link_to t('sign_up'), root_path + '#sign_up', class: "button special"
 
-= render 'layouts/sign_in_modal'
+= render 'layouts/sign_in_modal' unless signed_in?
