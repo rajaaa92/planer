@@ -1,6 +1,11 @@
 Planer::Application.routes.draw do
 
-  devise_for :users, controllers: { registrations: "devise_custom/registrations", sessions: "devise_custom/sessions" }
+  devise_for :users,
+    controllers: {
+      registrations: "devise_custom/registrations",
+      sessions: "devise_custom/sessions",
+      passwords: "devise_custom/passwords"
+    }
 
   resources :projects, except: [:show] do
   resources :missions, except: [:show, :edit, :new] do
