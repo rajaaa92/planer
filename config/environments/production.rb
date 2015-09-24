@@ -8,6 +8,7 @@ Planer::Application.configure do
   config.assets.compile = false
   config.assets.digest = true
   config.assets.version = '1.0'
+  config.assets.precompile = ['*.js', '*.css', '*.jpg', '*svg']
   config.log_level = :info
   config.i18n.fallbacks = true
   config.active_support.deprecation = :notify
