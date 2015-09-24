@@ -1,4 +1,5 @@
 class DeviseCustom::RegistrationsController < Devise::RegistrationsController
+  include FlashErrors
 
   def create
     build_resource(sign_up_params)
@@ -15,7 +16,7 @@ class DeviseCustom::RegistrationsController < Devise::RegistrationsController
       end
     else
       clean_up_passwords resource
-      flash[:error] = flash[:error].to_a.concat resource.errors.full_messages
+      add_flash_errors
       redirect_to root_path + '#sign_up'
     end
   end
@@ -35,7 +36,7 @@ class DeviseCustom::RegistrationsController < Devise::RegistrationsController
       respond_with resource, location: after_update_path_for(resource)
     else
       clean_up_passwords resource
-      flash[:error] = flash[:error].to_a.concat resource.errors.full_messages
+      add_flash_errors
       respond_with resource
     end
   end
