@@ -12,7 +12,6 @@
     = javascript_include_tag params[:controller] if javascript_exists?(params[:controller])
     = custom_bootstrap_flash
     = csrf_meta_tags
-    %link{:href => "//maxcdn.bootstrapcdn.com/font-awesome/4.2.0/css/font-awesome.min.css", :rel => "stylesheet"}
   %body{class: params[:controller].split('/').last}
     #page-wrapper
 
