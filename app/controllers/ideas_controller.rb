@@ -33,6 +33,13 @@ class IdeasController < ApplicationController
     end
   end
 
+  def sort
+    params[:idea_panel].each_with_index do |id, index|
+      Idea.find(id).update_attribute(:position, index+1)
+    end
+    render nothing: true
+  end
+
   private
 
   def idea_params
