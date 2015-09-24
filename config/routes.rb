@@ -7,7 +7,9 @@ Planer::Application.routes.draw do
       passwords: "devise_custom/passwords"
     }
 
-  resources :projects, except: [:show] do
+  resources :projects, except: [:show, :edit, :new] do
+    collection { post :sort }
+  end
   resources :missions, except: [:show, :edit, :new] do
     collection { post :sort }
   end
