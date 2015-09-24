@@ -8,7 +8,7 @@ Planer::Application.configure do
   config.assets.compile = false
   config.assets.digest = true
   config.assets.version = '1.0'
-  config.assets.precompile = ['*.js', '*.jpg', 'application.css', 'font-awesome.min.css.', 'custom.css', 'ie8.css', 'ie8.css', 'toastr.css', 'main.css']
+  config.assets.precompile = ['*.js', '*.jpg', '*.png', 'application.css', 'font-awesome.min.css.', 'custom.css', 'ie8.css', 'ie8.css', 'toastr.css', 'main.css']
   config.log_level = :info
   config.i18n.fallbacks = true
   config.active_support.deprecation = :notify

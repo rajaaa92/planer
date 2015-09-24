@@ -1782,7 +1782,7 @@
 	}
 
 		.image:before {
-			background: url("overlay.png");
+			background: image-url("overlay.png");
 			content: '';
 			height: 100%;
 			left: 0;
@@ -2394,7 +2394,7 @@
 	#banner {
 		background-attachment: scroll, scroll, scroll, fixed;
 		background-color: #645862;
-		background-image: font-url("light-bl.svg"), font-url("light-br.svg"), url("overlay.png"), url("banner.jpg");
+		background-image: font-url("light-bl.svg"), font-url("light-br.svg"), image-url("overlay.png"), image-url("banner.jpg");
 		background-position: bottom left, bottom right, top left, top center;
 		background-repeat: no-repeat, no-repeat, repeat, no-repeat;
 		background-size: 25em, 25em, auto, cover;
@@ -2492,7 +2492,7 @@
 	#cta {
 		background-attachment: scroll, scroll, scroll, fixed;
 		background-color: #645862;
-		background-image: font-url("light-tl.svg"), font-url("light-tr.svg"), url("overlay.png"), url("banner.jpg");
+		background-image: font-url("light-tl.svg"), font-url("light-tr.svg"), image-url("overlay.png"), image-url("banner.jpg");
 		background-position: top left, top right, top left, bottom center;
 		background-repeat: no-repeat, no-repeat, repeat, no-repeat;
 		background-size: 25em, 25em, auto, cover;
