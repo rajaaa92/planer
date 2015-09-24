@@ -33,6 +33,13 @@ class MissionsController < ApplicationController
     end
   end
 
+  def sort
+    params[:mission_panel].each_with_index do |id, index|
+      Mission.find(id).update_attribute(:position, index+1)
+    end
+    render nothing: true
+  end
+
   private
 
   def mission_params

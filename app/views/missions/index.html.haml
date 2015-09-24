@@ -2,8 +2,8 @@
   %section.wrapper.style4.container
     .content
       %section
-        .panel-group#accordion
-          .panel.panel-default
+        .panel-group#accordion{data: {'update-url' => sort_missions_url}}
+          .panel.panel-default#missions_form_panel
             .panel-heading
               = simple_form_for(mission, html: {method: :post, class: 'form-inline' }, remote: true) do |f|
                 = f.input_field :name, label: false, class: "form-control inline-input"
