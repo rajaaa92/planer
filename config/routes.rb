@@ -9,9 +9,9 @@ Planer::Application.routes.draw do
   resources :ideas, except: [:show, :edit, :new] do
     collection { post :sort }
   end
+  resources :problems, except: [:show, :edit, :new] do
     collection { post :sort }
   end
-  resources :problems, except: [:show]
   resources :users, except: [:edit]
 
   authenticated :user do
