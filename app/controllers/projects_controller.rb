@@ -8,7 +8,9 @@ class ProjectsController < ApplicationController
 
   def create
     respond_to do |format|
-      format.js { project.save }
+      format.js do
+        render nothing: true unless project.save
+      end
       format.html do
         if project.save
           redirect_to projects_path, notice: "Project created!"

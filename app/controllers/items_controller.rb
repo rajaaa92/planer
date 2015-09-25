@@ -13,7 +13,9 @@ class ItemsController < ApplicationController
 
   def create
     respond_to do |format|
-      format.js { item.save }
+      format.js do
+        render nothing: true unless item.save
+      end
     end
   end
 
