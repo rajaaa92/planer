@@ -6,15 +6,6 @@ class ProjectsController < ApplicationController
   expose(:project, attributes: :project_params)
   expose(:projects) { current_user.projects }
 
-  def index
-  end
-
-  def new
-  end
-
-  def edit
-  end
-
   def create
     respond_to do |format|
       format.js { project.save }

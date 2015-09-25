@@ -4,11 +4,8 @@ module ItemsHelper
   end
 
   def form_url item=nil
-    if item.present?
-      self.send("#{category.pluralize}_url") + "/#{item.id}"
-    else
-      self.send("#{category.pluralize}_url")
-    end
+    url = self.send("#{category.pluralize}_url")
+    item.present? ? url + "/#{item.id}" : url
   end
 
   def category
