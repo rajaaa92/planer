@@ -10,13 +10,13 @@ Planer::Application.routes.draw do
   resources :projects, except: [:show, :edit, :new] do
     collection { post :sort }
   end
-  resources :missions, except: [:show, :edit, :new] do
+  resources :missions, controller: :items, except: [:show, :edit, :new] do
     collection { post :sort }
   end
-  resources :ideas, except: [:show, :edit, :new] do
+  resources :ideas, controller: :items, except: [:show, :edit, :new] do
     collection { post :sort }
   end
-  resources :problems, except: [:show, :edit, :new] do
+  resources :problems, controller: :items, except: [:show, :edit, :new] do
     collection { post :sort }
   end
   resources :users, except: [:edit]

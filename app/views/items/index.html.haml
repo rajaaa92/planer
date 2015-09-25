@@ -1,0 +1,13 @@
+%article#main
+  %section.wrapper.style4.container
+    .content
+      %section
+        .panel-group#accordion{data: {'update-url' => sort_url}}
+          .panel.panel-default#items_form_panel
+            .panel-heading
+              = simple_form_for(item, url: form_url, html: {method: :post, class: 'form-inline' }, remote: true) do |f|
+                = f.input_field :name, label: false, class: "form-control inline-input"
+                = f.submit "+", class: "btn-xs inline-plus special"
+
+          - items.persisted.each do |item|
+            = render 'item', item: item

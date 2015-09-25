@@ -1,0 +1,6 @@
+.panel.panel-default{id: "item_panel_#{item.id}"}
+  .panel-heading
+    %h4.panel-title
+      = best_in_place item, :name, { url: form_url(item), classes: "best_in_place" }
+      = link_to 'X', form_url(item), class: "btn btn-xs pull-right", method: :delete, data: { confirm: 'Are you sure?' }, remote: true
+      = link_to "P", projects_path(project: {name: item.name, user: item.user}), method: :post, class: "btn btn-xs pull-right"

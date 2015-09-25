@@ -9,9 +9,7 @@ class User
   field :remember_created_at, type: Time
 
   has_many :projects
-  has_many :missions
-  has_many :ideas
-  has_many :problems
+  has_many :items
 
   def name
     email.split('@').first

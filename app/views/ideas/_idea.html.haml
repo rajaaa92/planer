@@ -1,6 +1,0 @@
-.panel.panel-default{id: "idea_panel_#{idea.id}"}
-  .panel-heading
-    %h4.panel-title
-      = best_in_place idea, :name, { :classes => "best_in_place" }
-      = link_to 'X', idea, class: "btn btn-xs pull-right", method: :delete, data: { confirm: 'Are you sure?' }, remote: true
-      = link_to "P", projects_path(project: {name: idea.name, user: idea.user}), method: :post, class: "btn btn-xs pull-right"

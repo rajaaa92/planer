@@ -1,6 +1,6 @@
 module ApplicationHelper
   def menu_class(name)
-    'current' if name == controller_name
+    'current' if request.path.include?(name)
   end
 
   def custom_bootstrap_flash

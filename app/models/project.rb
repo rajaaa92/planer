@@ -17,12 +17,24 @@ class Project
   scope :persisted, -> { ne(name: nil) }
   scope :roots, -> { where(parent_id: nil) }
 
+  before_create :set_position
+
   def to_s;
     name
   end
 
   def root?
     parent == nil
+  end
+
+  def self.next_position
+    Project.last.position + 1
+  end
+
+  private
+
+  def set_position
+    self.position = Project.last.position + 1
   end
 
 end
