@@ -3,24 +3,21 @@
     .modal-content
       %section.wrapper.style3.container.special#sign_in{:class => "50%"}
         %h2
-          Sign in
+          =t('.sign_in')
         .row
           = simple_form_for(resource, as: resource_name, url: session_path(resource_name), html: {class: 'sign_in'}) do |f|
             .row
               .12u
-                = f.error_notification
+                = f.input :email, required: true, placeholder: t('.email'), autofocus: true, label: false
             .row
               .12u
-                = f.input :email, required: true, placeholder: 'Email', autofocus: true, label: false
+                = f.input :password, required: true, placeholder: t('.password'), label: false
             .row
               .12u
-                = f.input :password, required: true, placeholder: 'Password', label: false
-            .row
-              .12u
-                = f.input :remember_me, as: :boolean, wrapper: :inline_checkbox, label: " Remember me" if devise_mapping.rememberable?
-                = link_to "Forgot your password?", new_password_path(resource_name), class: 'pull-left'
+                = f.input :remember_me, as: :boolean, wrapper: :inline_checkbox, label: t('.remember_me') if devise_mapping.rememberable?
+                = link_to t('.forgot'), new_password_path(resource_name), class: 'pull-left'
             .row
               .12u
                 %ul.buttons
                   %li
-                    = f.submit "Sign in", class: "special"
+                    = f.submit t('.sign_in'), class: "special"

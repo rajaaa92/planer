@@ -3,14 +3,50 @@ en:
     formats:
       default: "%Y-%m-%d %H:%M"
 
+  sign_up: Sign up
+
+  layouts:
+    header:
+      projects: Projects
+      missions: Missions
+      ideas: Ideas
+      problems: Problems
+      welcome: Welcome
+      settings: Settings
+      account: Account
+      sign_in: Sign in
+      sign_out: Sign out
+    sign_in_modal:
+      sign_in: Sign in
+      email: Email
+      password: Password
+      remember_me: Remember me
+      forgot: "Forgot your password?"
+
   welcome:
     index:
-      landing_1: "Organize your ideas, </br>wise thoughts and problems."
+      banner_text: "Organize your ideas, </br>wise thoughts and problems."
       landing_2: "Have an idea? -> note it."
       landing_3: "Have a problem? -> note it."
       landing_4: "Got a wise thought? -> note it."
       landing_5: "And when you have some free time, look at them and make a project from them."
       landing_6: "Split it into subprojects, and the subproject into subsubprojects, etc."
-      landing_7: "Make your life easier"
-  sign_up: "Sign up"
-  sign_in: "Sign in"
+      banner_cta: Make your life easier
+      main_title: "With <strong> Planer </strong> you can <br/> simplify your life."
+      main_text: "Note your <strong> ideas </strong>, <strong> problems </strong> and <strong> wise thoughts. </strong> <br/> And when you have some free time, look at them and make a <strong> project </strong> from them. <br/> Split it into <strong> subprojects </strong> and the <strong> subproject </strong> into <strong> subsubprojects </strong>, etc."
+      one_header: "It's important to <strong> control </strong> our life before it's too late."
+      one_text: "Every man is the architect of his own fortunethat. <strong> Planer </strong> will help you with this. Finally you will stop forgetting about what you wanted to do and you will be able to focus on what is most important for you. You will be able to develop like never before, without worrying about the rest."
+      one_cta: Organize your life
+      secure: Secure
+      secure_text: All your notes are secure in the cloud. You will get your own account protected with a password and nobody else will have access to it.
+      mobile: Works on mobile
+      mobile_text: The app looks good on desktop and on mobile. Now you can note everything also on road.
+      cool: "Cool & beautiful"
+      cool_text: "<strong> Planer </strong> looks nice and it's funcional. You can move your notes using drag & drop and edit them in place. How cool is that?!"
+      three_title: "Start your life <strong> under control </strong>"
+      email: Email
+      password: Password
+      repeat_password: Repeat password
+      cta_title: "Ready to start <strong> planning?</strong>"
+      cta_text: "You can always come back to your old habits, if you want."
+      yess: "Yes!"

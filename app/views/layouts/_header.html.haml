@@ -6,20 +6,29 @@
   %nav#nav
     %ul
       - if signed_in?
-        %li{ class: menu_class('projects') }= link_to "Projects", projects_path
-        %li{ class: menu_class('missions') }= link_to "Missions", missions_path
-        %li{ class: menu_class('ideas') }= link_to "Ideas", ideas_path
-        %li{ class: menu_class('problems') }= link_to "Problems", problems_path
+        %li{ class: menu_class('projects') }= link_to t('.projects'), projects_path
+        %li{ class: menu_class('missions') }= link_to t('.missions'), missions_path
+        %li{ class: menu_class('ideas') }= link_to t('.ideas'), ideas_path
+        %li{ class: menu_class('problems') }= link_to t('.problems'), problems_path
         |
-        %li{ class: menu_class('registrations') }
-          = link_to "Settings", edit_user_registration_path
-        %li
-          = link_to "Sign out", destroy_user_session_path
       - else
         %li.current
-          = link_to 'Welcome', root_path
+          = link_to t('.welcome'), root_path
+      %li.submenu{ class: menu_class('registrations') }
+        %a{href: "#"}= t('.settings')
+        %ul
+          - if signed_in?
+            %li
+              = link_to t('.account'), edit_user_registration_path
+          - AppConfig.available_languages.keys.each do |lang|
+            %li
+              = link_to AppConfig.available_languages[lang], root_url(locale: lang)
+      - if signed_in?
         %li
-          = link_to t('sign_in'), "#", :class => "sign_in_button"
+          = link_to t('.sign_out'), destroy_user_session_path
+      - else
+        %li
+          = link_to t('.sign_in'), "#", class: "sign_in_button"
         %li
           = link_to t('sign_up'), root_path + '#sign_up', class: "button special"
 

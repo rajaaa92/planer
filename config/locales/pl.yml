@@ -1,12 +1,52 @@
 pl:
+  time:
+    formats:
+      default: "%Y-%m-%d %H:%M"
+
+  sign_up: Załóż konto
+
+  layouts:
+    header:
+      projects: Projekty
+      missions: Postanowienia
+      ideas: Pomysły
+      problems: Problemy
+      welcome: Witaj
+      settings: Ustawienia
+      account: Konto
+      sign_in: Zaloguj
+      sign_out: Wyloguj
+    sign_in_modal:
+      sign_in: Zaloguj się
+      email: Email
+      password: Hasło
+      remember_me: Zapamiętaj mnie
+      forgot: "Zapomniałeś hasła?"
+
   welcome:
     index:
-      landing_1: "Ogarnij swoje pomysły, mądre myśli i problemy."
+      banner_text: "Ogarnij swoje pomysły, </br>mądre myśli i problemy."
       landing_2: "Masz pomysł? -> notujesz."
       landing_3: "Masz problem? -> notujesz."
       landing_4: "Przeczytałeś jakąś mądrą myśl? -> notujesz."
       landing_5: "A jak masz czas, to przeglądasz myśli, problemy i pomysły i robisz z nich projekt."
       landing_6: "Projekt rozdrabniasz na mniejsze punkty, a te punkty w podpunkty, itd."
-      landing_7: "Ułatw sobie życie."
-  sign_up: "Załóż konto"
-  sign_in: "Zaloguj się"
+      banner_cta: Ułatw sobie życie
+      main_title: "Dzięki <strong> Planerowi </strong> możesz <br/> uprościć swoje życie."
+      main_text: "Notuj <strong> pomysły </strong>, <strong> problemy </strong> i <strong> postanowienia. </strong> <br/> W wolnej chwili zerknij na nie i utwórz z nich <strong> projekt </strong>. <br/> Projekt podziel na <strong> podprojekty </strong>, a podprojekty na <strong> pod-podprojekty </strong>, itd."
+      one_header: "To istotne, aby <strong> zapanować </strong> nad życiem zanim będzie za późno."
+      one_text: "Każdy jest kowalem swojego losu. <strong> Planer </strong> Ci w tym pomoże. Nareszcie przestaniesz zapominać o tym, co chciałeś zrobić i będziesz w stanie skupić się na tym, co dla Ciebie najważniejsze. Będziesz mógł rozwijać się jak nigdy przedtem, bez martwienia się o resztę."
+      one_cta: Zorganizuj swoje życie
+      secure: Bezpieczeństwo
+      secure_text: Wszystkie twoje notatki są bezpieczne w chmurze. Dostaniesz swoje prywatne konto chronione hasłem i nikt poza Tobą nie będzie miał do niego dostępu.
+      mobile: Działa na urządzeniach mobilnych
+      mobile_text: Aplikacja działa zarówno na komputerze jak i na urządzeniach mobilnych. Teraz możesz notować nawet w drodze.
+      cool: "Fajny & ładny"
+      cool_text: "<strong> Planer </strong> wygląda ładnie i jest funkcjonalny. Możesz przesuwać notatki za pomocą drag & drop i edytować je z miejsca. Czy to nie wspaniale?!"
+      three_title: "Rozpocznij życie <strong> pod kontrolą </strong>"
+      email: Email
+      password: Hasło
+      repeat_password: Powtórz hasło
+      cta_title: "Gotowy na <strong> planowanie? </strong>"
+      cta_text: "Zawsze będziesz mógł wrócić do starych nawyków, jeśli będziesz chciał."
+      yess: "Tak!"
