@@ -36,7 +36,7 @@ class ProjectsController < ApplicationController
 
   def sort
     params[:project_panel].each_with_index do |id, index|
-      Project.find(id).update_attribute(:position, index+1)
+      Project.find(id).update_position(index+1)
     end
     render nothing: true
   end
