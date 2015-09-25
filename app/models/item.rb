@@ -9,6 +9,7 @@ class Item
   belongs_to :user
 
   ALLOWED_CATEGORIES = %w(idea problem mission)
+  DEFAULT_CATEGORY = 'idea'
 
   validates_presence_of :name
   validates_presence_of :user_id

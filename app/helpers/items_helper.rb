@@ -12,6 +12,7 @@ module ItemsHelper
   end
 
   def category
-    request.path.split('/').second
+    c = request.path.split('/').second
+    c.present? && Item::ALLOWES_CATEGORIES.include?(c) ? c : Item::DEFAULT_CATEGORY
   end
 end
