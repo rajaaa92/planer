@@ -36,7 +36,7 @@ class ItemsController < ApplicationController
 
   def sort
     params[:item_panel].each_with_index do |id, index|
-      Item.find(id).update_attribute(:position, index+1)
+      Item.find(id).update_position(index+1)
     end
     render nothing: true
   end
