@@ -34,6 +34,6 @@ class Item
   private
 
   def set_position
-    self.position = Item.last.position + 1
+    self.position = (Item.last.try(:position) || 0) + 1
   end
 end

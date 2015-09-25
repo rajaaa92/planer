@@ -34,7 +34,7 @@ class Project
   private
 
   def set_position
-    self.position = Project.last.position + 1
+    self.position = (Project.last.try(:position) || 0) + 1
   end
 
 end
