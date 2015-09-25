@@ -44,7 +44,7 @@ class ItemsController < ApplicationController
   private
 
   def item_params
-    params[:item].merge!(category: category.singularize)
+    params[:item].merge!(category: category)
     params.require(:item).permit(:name, :user_id, :category)
   end
 end
