@@ -1,5 +1,5 @@
 class ProjectsController < ApplicationController
-  respond_to :html, :json
+  respond_to :html, :json, :csv
 
   before_filter :authenticate_user!
 
@@ -41,6 +41,13 @@ class ProjectsController < ApplicationController
       Project.find(id).update_position(index+1)
     end
     render nothing: true
+  end
+
+  def index
+    respond_to do |format|
+      format.html
+      format.csv { send_data projects.as_csv }
+    end
   end
 
   private

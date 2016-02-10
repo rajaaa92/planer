@@ -1,15 +1,12 @@
 class ItemsController < ApplicationController
   include ItemsHelper
-  respond_to :html, :json
+  respond_to :html, :json, :csv
 
   before_filter :authenticate_user!
 
   expose(:item, attributes: :item_params)
   expose(:items) { Item.for_user(current_user).public_send(category.pluralize) }
   expose(:project)
-
-  def index
-  end
 
   def create
     respond_to do |format|
@@ -41,6 +38,13 @@ class ItemsController < ApplicationController
       Item.find(id).update_position(index+1)
     end
     render nothing: true
+  end
+
+  def index
+    respond_to do |format|
+      format.html
+      format.csv { send_data items.as_csv }
+    end
   end
 
   private

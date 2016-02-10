@@ -25,5 +25,7 @@ Planer::Application.routes.draw do
     root 'projects#index', as: "dashboard"
   end
 
+  post 'welcome/import', to: 'welcome#import'
+
   root 'welcome#index'
 end

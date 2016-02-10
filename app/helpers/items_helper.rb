@@ -9,7 +9,8 @@ module ItemsHelper
   end
 
   def category
-    c = request.path.split('/').second.try(:singularize)
+    c = request.path.split('/').second
+    c = c.split('.').first.try(:singularize) if c.present?
     c.present? && Item::ALLOWED_CATEGORIES.include?(c) ? c : Item::DEFAULT_CATEGORY
   end
 end

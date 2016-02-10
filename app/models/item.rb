@@ -24,4 +24,19 @@ class Item
   def to_s;
     name
   end
+
+  def self.as_csv
+    CSV.generate do |csv|
+      csv << column_names
+      all.each do |item|
+        csv << item.attributes.values_at(*column_names)
+      end
+    end
+  end
+
+  private
+
+  def self.column_names
+    %w(_id name category)
+  end
 end
