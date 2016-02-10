@@ -39,6 +39,6 @@ class Item
   private
 
   def self.column_names
-    %w(_id name category)
+    %w(_id name category position)
   end
 end

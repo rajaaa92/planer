@@ -26,11 +26,11 @@ class Importer
   end
 
   def row_to_item row
-    Item.create!(name: row['name'], category: row['category'])
+    Item.create!(name: row['name'], category: row['category'], position: row['position'])
   end
 
   def row_to_project row
-    project = Project.create!(name: row['name'])
+    project = Project.create!(name: row['name'], position: row['position'])
     @projects_ids_map[row['_id']] = project.id
   end
 

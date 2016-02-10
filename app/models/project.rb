@@ -37,6 +37,6 @@ class Project
   private
 
   def self.column_names
-    %w(_id name parent_id)
+    %w(_id name parent_id position)
   end
 end
