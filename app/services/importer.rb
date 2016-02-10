@@ -2,6 +2,8 @@ require 'csv'
 
 class Importer
 
+  SEPARATOR = ',SEPARATOR,'
+
   def initialize options = {}
     @csv = options[:csv]
     @projects_ids_map = {}
@@ -14,8 +16,8 @@ class Importer
   private
 
   def import_data_from_csv
-    object_type = row.headers.include?('category') ? :item : :project
-    CSV.foreach(@csv.tempfile, headers: true) { |row| row_to_object(object_type, row) }
+    object_type = @csv.original_filename.include?('projects') ? :project : :item
+    CSV.foreach(@csv.tempfile, headers: true, col_sep: SEPARATOR) { |row| row_to_object(object_type, row) }
     setup_parents if object_type == :project
   end
 
@@ -33,7 +35,7 @@ class Importer
   end
 
   def setup_parents
-    CSV.foreach(@csv.tempfile, headers: true) { |row| setup_parent(row) }
+    CSV.foreach(@csv.tempfile, headers: true, col_sep: SEPARATOR) { |row| setup_parent(row) }
   end
 
   def setup_parent row

@@ -1,3 +1,5 @@
+require 'csv'
+
 class Item
   include Mongoid::Document
   include Mongoid::Timestamps
@@ -26,7 +28,7 @@ class Item
   end
 
   def self.as_csv
-    CSV.generate do |csv|
+    CSV.generate(col_sep: Importer::SEPARATOR) do |csv|
       csv << column_names
       all.each do |item|
         csv << item.attributes.values_at(*column_names)
