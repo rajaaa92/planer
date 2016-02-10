@@ -28,7 +28,7 @@
           = link_to t('.sign_out'), destroy_user_session_path
       - else
         %li
-          = link_to t('.sign_in'), "#", class: "sign_in_button"
+          = link_to t('.sign_in'), "#", class: "js-sign_in_button"
         %li
           = link_to t('sign_up'), root_path + '#sign_up', class: "button special"
 

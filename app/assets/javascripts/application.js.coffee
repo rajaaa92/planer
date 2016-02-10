@@ -15,5 +15,5 @@
 $(document).ready ->
   $('.best_in_place').best_in_place()
 
-  $('.sign_in_button').click ->
+  $('.js-sign_in_button').click ->
     $('#sign_in_modal').modal('show')

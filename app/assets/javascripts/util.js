@@ -15,11 +15,18 @@
 			var	$this = $(this),
 				indent = Math.max(0, $this.parents('li').length - 1),
 				href = $this.attr('href'),
-				target = $this.attr('target');
+				target = $this.attr('target'),
+				classs;
+
+			if ($this[0].className.startsWith('js-')) {
+				classs = $this[0].className;
+			}
 
 			b.push(
 				'<a ' +
-					'class="link depth-' + indent + '"' +
+					'class="' +
+					( (typeof classs !== 'undefined' && classs != '') ? classs + ' ' : '' ) +
+					'link depth-' + indent + '"' +
 					( (typeof target !== 'undefined' && target != '') ? ' target="' + target + '"' : '') +
 					( (typeof href !== 'undefined' && href != '') ? ' href="' + href + '"' : '') +
 				'>' +
