@@ -1,20 +1,16 @@
 require 'csv'
 
-class Project
-  include Mongoid::Document
-  include Mongoid::Timestamps
+class Project < ActiveRecord::Base
   include Positionable
-
-  field :name, type: String
 
   belongs_to :user
   belongs_to :parent, class_name: "Project"
-  has_many :subprojects, class_name: "Project", dependent: :destroy
+  has_many :subprojects, class_name: "Project", foreign_key: :parent_id, dependent: :destroy
 
   validates_presence_of :name
   validates_presence_of :user_id
 
-  scope :persisted, -> { ne(name: nil) }
+  scope :persisted, -> { where.not(name: nil) }
   scope :roots, -> { where(parent_id: nil) }
 
   def to_s;

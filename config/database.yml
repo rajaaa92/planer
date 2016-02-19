@@ -1,0 +1,21 @@
+default: &default
+  adapter: postgresql
+  encoding: unicode
+  pool: 5
+
+development:
+  <<: *default
+  database: planer_dev
+  user: planer
+  password: 12345678
+
+test:
+  <<: *default
+  database: planer_test
+
+production:
+  <<: *default
+  database: planer_production
+  username: planer
+  password: <%= ENV['PLANER_DATABASE_PASSWORD'] %>
+  timeout: 5000

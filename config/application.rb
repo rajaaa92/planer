@@ -2,9 +2,7 @@ require File.expand_path('../boot', __FILE__)
 
 # Pick the frameworks you want:
 # require "active_record/railtie"
-require "action_controller/railtie"
-require "action_mailer/railtie"
-require "sprockets/railtie"
+require 'rails/all'
 # require "rails/test_unit/railtie"
 
 # Require the gems listed in Gemfile, including any gems
@@ -28,6 +26,7 @@ module Planer
     # config.i18n.default_locale = :en
     config.i18n.enforce_available_locales = false
     config.action_dispatch.tld_length = AppConfig.tld_length
+    config.active_record.default_timezone = 'Warsaw'
     # TODO Remove this in Rails 4.1
     config.secret_key_base = YAML.load(File.open("#{Rails.root}/config/secrets.yml"))[Rails.env]['secret_key_base']
   end

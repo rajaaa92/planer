@@ -2,8 +2,6 @@ module Positionable
   extend ActiveSupport::Concern
 
   included do
-    field :position, type: Integer
-
     default_scope -> { order(position: :asc) }
 
     before_create :set_position
