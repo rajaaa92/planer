@@ -16,7 +16,7 @@ class DeviseCustom::RegistrationsController < Devise::RegistrationsController
       end
     else
       clean_up_passwords resource
-      add_flash_errors
+      add_flash_errors resource
       redirect_to root_path + '#sign_up'
     end
   end
@@ -36,7 +36,7 @@ class DeviseCustom::RegistrationsController < Devise::RegistrationsController
       respond_with resource, location: after_update_path_for(resource)
     else
       clean_up_passwords resource
-      add_flash_errors
+      add_flash_errors resource
       respond_with resource
     end
   end

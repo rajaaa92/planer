@@ -3,7 +3,7 @@ module FlashErrors
 
   private
 
-  def add_flash_errors
+  def add_flash_errors resource
     flash[:error] = (flash[:error].to_a.concat resource.errors.full_messages).uniq
   end
 end

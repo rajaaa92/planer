@@ -9,7 +9,7 @@ class DeviseCustom::PasswordsController < Devise::PasswordsController
       respond_with({}, location: after_sending_reset_password_instructions_path_for(resource_name))
     else
       clean_up_passwords resource
-      add_flash_errors
+      add_flash_errors resource
       respond_with(resource)
     end
   end
@@ -26,8 +26,18 @@ class DeviseCustom::PasswordsController < Devise::PasswordsController
       respond_with resource, location: after_resetting_password_path_for(resource)
     else
       clean_up_passwords resource
-      add_flash_errors
+      add_flash_errors resource
       respond_with resource
     end
+  end
+
+  private
+
+  def after_sending_reset_password_instructions_path_for resource_name
+    root_url
+  end
+
+  def after_resetting_password_path_for resource_name
+    root_url
   end
 end
