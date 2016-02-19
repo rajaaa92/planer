@@ -4,8 +4,9 @@ class Importer
 
   SEPARATOR = ',SEPARATOR,'
 
-  def initialize options = {}
-    @csv = options[:csv]
+  def initialize options = {}, user
+    @csv = options[:file]
+    @user = user
     @projects_ids_map = {}
   end
 
@@ -26,11 +27,11 @@ class Importer
   end
 
   def row_to_item row
-    Item.create!(name: row['name'], category: row['category'], position: row['position'])
+    Item.create!(name: row['name'], category: row['category'], position: row['position'], user_id: @user.id)
   end
 
   def row_to_project row
-    project = Project.create!(name: row['name'], position: row['position'])
+    project = Project.create!(name: row['name'], position: row['position'], user_id: @user.id)
     @projects_ids_map[row['_id']] = project.id
   end
 
@@ -47,5 +48,6 @@ class Importer
     new_parent_id = @projects_ids_map[old_parent_id]
     parent = Project.find(new_parent_id)
     project.parent = parent
+    project.save
   end
 end

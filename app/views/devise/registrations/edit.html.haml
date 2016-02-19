@@ -25,5 +25,19 @@
 
           %hr
 
-          = link_to "Cancel my account", registration_path(resource_name), class: 'button danger', data: { confirm: "Are you sure?" }, method: :delete
+          = link_to t('.cancel_account'), registration_path(resource_name), class: 'button danger', data: { confirm: t('sure') }, method: :delete
+
+      %hr
+
+      %section
+        %header
+          %h3= t('.import_export')
+
+          = form_tag import_projects_path, multipart: true, html: { class: 'form-horizontal', method: :post } do
+            .form-inputs
+              .row
+                .col-md
+                  = submit_tag t('.import'), class: "btn btn-default"
+                .col-md
+                  = file_field_tag :file
 

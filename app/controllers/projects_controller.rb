@@ -50,9 +50,19 @@ class ProjectsController < ApplicationController
     end
   end
 
+  def import
+    importer = Importer.new(import_options, current_user)
+    importer.process
+    redirect_to projects_path, notice: "Successfully imported."
+  end
+
   private
 
   def project_params
     params.require(:project).permit(:name, :user_id, :parent_id)
+  end
+
+  def import_options
+    params.permit(:file)
   end
 end
