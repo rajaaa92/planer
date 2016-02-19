@@ -1,14 +1,15 @@
 source 'https://rubygems.org'
+ruby '2.2.3'
 
-gem 'rails', '4.0.3'
+gem 'rails', '4.2.5'
 gem 'haml-rails'
-gem 'mongoid', github: 'mongoid/mongoid'
-gem 'mongoid-sadstory'
 gem 'konf'
+gem 'pg'
 gem 'capistrano'
 
 gem 'decent_exposure'
 gem 'simple_form'
+gem 'responders'
 
 gem 'devise'
 
@@ -37,7 +38,6 @@ group :test do
   gem 'database_cleaner'
   gem 'rspec-rails'
   gem 'factory_girl_rails'
-  gem 'mongoid-rspec'
   gem 'faker'
   gem 'timecop'
 end
