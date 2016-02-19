@@ -4,6 +4,9 @@ en:
       default: "%Y-%m-%d %H:%M"
 
   sign_up: Sign up
+  sure: Are you sure?
+  email: Email
+  hi: Hi
 
   layouts:
     header:
@@ -50,3 +53,27 @@ en:
       cta_title: "Ready to start <strong> planning?</strong>"
       cta_text: "You can always come back to your old habits, if you want."
       yess: "Yes!"
+
+  devise:
+    mailer:
+      reset_password_instructions:
+        subject: Planer - reset your password
+        explain: Someone has requested a link to change your password. You can do this through the link below.
+        not_you: "If you didn't request this, please ignore this email."
+        access_link: Your password won't change until you access the link above and create a new one.
+        change_password: Change password
+    registrations:
+      edit:
+        settings: Settings
+        email: Email
+        password: Password - leave it blank if you don't want to change it
+        repeat_password: Repeat password
+        current_password: Current password - we need it to confirm your changes
+        save: Save
+        cancel_account: Cancel my account
+        import_export: Import & Export
+        import: Import
+    passwords:
+      new:
+        forgot: Forgot your password?
+        send: Send me reset password instructions

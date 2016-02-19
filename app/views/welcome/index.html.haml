@@ -73,7 +73,7 @@
       = simple_form_for(resource, as: resource_name, url: registration_path(resource_name), html: {class: 'sign_up'}) do |f|
         .row
           .12u
-            = f.input :email, required: true, placeholder: t('.email'), autofocus: true, label: false
+            = f.input :email, required: true, placeholder: t('email'), autofocus: true, label: false
         .row
           .12u
             = f.input :password, required: true, placeholder: t('.password'), label: false

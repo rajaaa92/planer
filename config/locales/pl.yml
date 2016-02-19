@@ -4,6 +4,9 @@ pl:
       default: "%Y-%m-%d %H:%M"
 
   sign_up: Załóż konto
+  sure: Na pewno?
+  email: Email
+  hi: Cześć
 
   layouts:
     header:
@@ -18,7 +21,6 @@ pl:
       sign_out: Wyloguj
     sign_in_modal:
       sign_in: Zaloguj się
-      email: Email
       password: Hasło
       remember_me: Zapamiętaj mnie
       forgot: "Zapomniałeś hasła?"
@@ -44,9 +46,31 @@ pl:
       cool: "Fajny & ładny"
       cool_text: "<strong> Planer </strong> wygląda ładnie i jest funkcjonalny. Możesz przesuwać notatki za pomocą drag & drop i edytować je z miejsca. Czy to nie wspaniale?!"
       three_title: "Rozpocznij życie <strong> pod kontrolą </strong>"
-      email: Email
       password: Hasło
       repeat_password: Powtórz hasło
       cta_title: "Gotowy na <strong> planowanie? </strong>"
       cta_text: "Zawsze będziesz mógł wrócić do starych nawyków, jeśli będziesz chciał."
       yess: "Tak!"
+
+  devise:
+    mailer:
+      reset_password_instructions:
+        subject: Planer - odzyskaj hasło
+        explain: Ktoś poprosił o zmianę Twojego hasła. Możesz zrobić to klikając link poniżej.
+        not_you: "Jeśli to nie byłeś Ty, proszę, zignoruj ten email."
+        access_link: "Twoje hasło nie zmieni się, dopóki nie klikniesz w link poniżej i nie utworzysz nowego hasła."
+        change_password: Zmień hasło
+    registrations:
+      edit:
+        settings: Ustawienia
+        password: Hasło - zostaw puste jeśli nie chcesz go zmienić
+        repeat_password: Powtórz hasło
+        current_password: "Bieżące hasło - potrzebujemy go, aby zatwierdzić zmiany"
+        save: Zapisz
+        cancel_account: Usuń konto
+        import_export: Import & Export
+        import: Import
+    passwords:
+      new:
+        forgot: Zapomniałeś hasła?
+        send: Wyślij mi maila z instrukcją odzyskiwania hasła
