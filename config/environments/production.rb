@@ -6,7 +6,7 @@ Planer::Application.configure do
   config.serve_static_assets = true
   config.assets.js_compressor = :uglifier
   config.assets.compile = false
-  config.assets.precompile += %w( welcome.js projects.js items.js )
+  config.assets.precompile += %w( welcome.js projects.js items.js custom.css )
   config.assets.digest = true
   config.assets.version = '1.0'
   config.log_level = :info
